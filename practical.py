@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv('../streamlit_practical/global_development_data.csv')
+url = "https://raw.githubusercontent.com/JohannaViktor/streamlit_practical/refs/heads/main/global_development_data.csv"
+df = pd.read_csv(url)
 df["year"] = pd.to_numeric(df["year"], errors="coerce")  # Handle non-numeric values
 # Get min and max year for the slider
 min_year, max_year = int(df["year"].min()), int(df["year"].max())
